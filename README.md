@@ -3,6 +3,10 @@ Fine-tuning Llama-2-7B for Text classification.
 
 Datasets: imdb , framework: deepspeed.
 
+Refer to [DFSS (ppopp'23)](https://github.com/apuaaChen/DFSS), which dynamically cuts the attention matrix to 2:4 during fine-tuning and inference.
+
+So in this repo, I changed Transformers packge's code, [src/transformers/models/llama/modeling_llama.py](https://github.com/huggingface/transformers/blob/main/src/transformers/models/llama/modeling_llama.py), which means Sparse Attention Mechanism was applied duing training and inference. 
+
 # Introdution
 Model: LLaMA-2-7b. 
 
